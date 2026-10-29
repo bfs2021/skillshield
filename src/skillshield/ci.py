@@ -130,9 +130,7 @@ def summary_markdown(
         lines += ["| File | Risk | Score | Findings |", "|---|---|---|---|"]
         for r in sorted(flagged, key=lambda r: (-_rank(r.risk_level), r.skill_name)):
             ids = ", ".join(f.rule_id for f in r.findings)
-            lines.append(
-                f"| `{r.skill_name}` | {r.risk_level} | {r.risk_score:.0f} | {ids} |"
-            )
+            lines.append(f"| `{r.skill_name}` | {r.risk_level} | {r.risk_score:.0f} | {ids} |")
         lines.append("")
     for r in errors:
         lines.append(f"- Could not read `{r.skill_name}`: {r.error}")

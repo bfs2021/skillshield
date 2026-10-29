@@ -10,6 +10,10 @@ All notable changes to this project are listed here. The format follows [Keep a 
 - `docs/threat-coverage.md`: the attack techniques reported against agent skills in 2025–2026, with sources, and how far SkillShield covers each.
 - A Limitations section in the README.
 
+### Fixed
+
+- A file's reported level is now at least the severity of its worst single finding, so one HIGH finding can no longer be diluted to MEDIUM by the file's other content; `skillshield.ci` exits non-zero when that file alone breaches the `fail-on` gate (issue #25).
+
 ## [1.2.0]
 
 ### Added
